@@ -105,29 +105,4 @@ class Window:
 
 Pub-Sub pattern
 
-```py
-# Process 1
-class Publisher:
-    pass
-    # async
 
-
-# Process 2
-class Consumer:
-    def process_message(self, message):
-        pass
-
-
-# Process 3 - Kafka / Celery
-class Queue:
-    messages: List[str]
-
-    def send_message(self, message):
-        # add to queue
-        messages.append(message)
-
-    def get_message(self):
-        # if not empty, then get any from queue
-        if messages:
-            return messages.pop()
-```
