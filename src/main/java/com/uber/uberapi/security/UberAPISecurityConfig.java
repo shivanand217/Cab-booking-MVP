@@ -5,11 +5,13 @@ import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 @EnableWebSecurity
 public class UberAPISecurityConfig extends WebSecurityConfigurerAdapter {
     @Configuration
-    @Order(1)
+    @Order(1) // Api based security (request from POSTMAN and other api clients)
     public static class APISecurityConfig extends WebSecurityConfigurerAdapter {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
@@ -18,7 +20,7 @@ public class UberAPISecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/passenger/**").hasAnyRole("PASSENGER", "ADMIN")
                     .antMatchers("/driver/**").hasAnyRole("DRIVER", "ADMIN")
                     .antMatchers("/location/**").hasAnyRole("DRIVER", "ADMIN", "PASSENGER") // loggedin and with proper roles
-                    .and().apply(new JwtConfigurer(this.tokenProvider))
+//                    .and().apply(new OAuth2ResourceServerConfigurer.JwtConfigurer(this.tokenProvider))
                     .and()
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         }
@@ -41,3 +43,4 @@ public class UberAPISecurityConfig extends WebSecurityConfigurerAdapter {
             }
         }
     }
+}

@@ -2,7 +2,9 @@ package com.uber.uberapi.controllers;
 
 import com.uber.uberapi.models.*;
 import com.uber.uberapi.repositories.*;
+import lombok.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,9 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RequestMapping("/db-init")
 @RestController
+@Builder
 public class DBInitController {
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+//    @Autowired
+//    private PasswordEncoder passwordEncoder;
     @Autowired
     private PassengerRepository passengerRepository;
     @Autowired
@@ -55,7 +58,7 @@ public class DBInitController {
                 .name("Monkey D. Luffy")
                 .account(Account.builder()
                         .username("0000")
-                        .password(passwordEncoder.encode("luffy"))
+                        .password("1111")
                         .role(driver)
                         .build())
                 .car(Car.builder()
@@ -71,7 +74,7 @@ public class DBInitController {
                 .name("Roronoa Zoro")
                 .account(Account.builder()
                         .username("0001")
-                        .password(passwordEncoder.encode("zoro"))
+                        .password("1111")
                         .role(driver)
                         .build())
                 .car(Car.builder()
@@ -89,7 +92,7 @@ public class DBInitController {
         Passenger usopp = Passenger.builder()
                 .account(Account.builder()
                         .username("0002")
-                        .password(passwordEncoder.encode("usopp"))
+                        .password("1111")
                         .role(passenger)
                         .build())
                 .gender(Gender.MALE)
@@ -99,7 +102,7 @@ public class DBInitController {
         Passenger nami = Passenger.builder()
                 .account(Account.builder()
                         .username("0004")
-                        .password(passwordEncoder.encode("nami"))
+                        .password("1111")
                         .role(passenger)
                         .build())
                 .gender(Gender.FEMALE)
@@ -111,7 +114,7 @@ public class DBInitController {
         Account sanji = Account.builder()
                 .username("0003")
                 .role(admin)
-                .password(passwordEncoder.encode("sanji"))
+                .password("1111")
                 .build();
         accountRepository.save(sanji);
         return "success";

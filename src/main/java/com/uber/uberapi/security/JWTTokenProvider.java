@@ -49,9 +49,10 @@ public class JWTTokenProvider {
         return jwtToken;
     }
 
-    public CustomUserDetails parseToken(String token) {
-        // going to take a token
-
-        // return a valid userdetails
-    }
+//    public CustomUserDetails parseToken(String token) {
+//        // going to take a token
+//
+//        // return a valid userdetails
+//
+//    }
 }
