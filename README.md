@@ -10,14 +10,14 @@ Designing MVP for a cab booking application similar to Uber.
 
 Technologies Used - Spring Boot, Hibernate, JPA, PostgresSQL, Redis.
 
-# Template Used:
-- FEATURE EXPECTATIONS [5 min]
+# Discussion Points:
+* FEATURE EXPECTATIONS (5 mins)
         * Use cases.
         * Scenarios that we can ignore.
         * Who will use.
         * How many will use.
         * Usage patterns.
-- ESTIMATIONS [5 min]
+* ESTIMATIONS (5 mins)
         * Throughput (QPS for read and write queries)
         * Latency expected from the system (for read and write queries)
         * Read/Write ratio
