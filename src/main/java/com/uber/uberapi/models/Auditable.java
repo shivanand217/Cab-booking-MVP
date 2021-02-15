@@ -21,13 +21,13 @@ import java.util.Date;
 //                       - disadvantage - we have to use table joins - expensive
 // mapped-super-class - the super class is abstract - no table for the superclass
 
-@MappedSuperclass // don't create table for Auditable
+@MappedSuperclass // this says that don't create table for Auditable
 @EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 public abstract class Auditable implements Serializable {
-    // sending these entities over network
-    // saving them in file
+    // Serializable and DeSerializable is for sending these entities over network
+    // or saving them in file
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -56,14 +56,14 @@ public abstract class Auditable implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true; // memory locations are same
         // first make sure that they belong to the same class
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || this.getClass() != o.getClass()) return false;
         // other object o, interpret as an auditable object
         Auditable auditable = (Auditable) o;
         // if any of the ids is null
         // id = null, o.id = null   - both objects are in memory
         // id = null, ob.id != null - can't be equal
         // id != null, ob.id = null - can't be equal
-        if (id == null || auditable.id == null) return false;
+        if (this.id == null || auditable.id == null) return false;
         // both ids are non-null
         return id.equals(auditable.id);
     }
