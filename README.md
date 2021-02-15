@@ -60,11 +60,17 @@ Technologies Used - Spring Boot, Hibernate, JPA, PostgresSQL, Redis.
 			    - CP [Unbounded size] => HBase, MongoDB, Couchbase, DynamoDB
 	- Caches
 		- Client caching, CDN caching, Webserver caching, Database caching, Application caching, Cache @Query level, Cache @Object level
-		- Eviction policies:
+		- Caching techniques:
 			- Cache aside
 			- Write through
 			- Write behind
 			- Refresh ahead
+		- Eviction techniques:
+			- Time based eviction.
+			- First in, first out (FIFO).
+			- First in, last out (FILO).
+			- Least Recently accessed.
+			- Least time between access.
 	- Asynchronism
 		- Message queues
 		- Task queues
