@@ -11,25 +11,25 @@ Designing MVP for a cab booking application similar to Uber.
 Technologies Used - Spring Boot, Hibernate, JPA, PostgresSQL, Redis.
 
 # Template Used:
-(1) FEATURE EXPECTATIONS [5 min]
-        (1) Use cases
-        (2) Scenarios that will not be covered
-        (3) Who will use
-        (4) How many will use
-        (5) Usage patterns
-(2) ESTIMATIONS [5 min]
-        (1) Throughput (QPS for read and write queries)
-        (2) Latency expected from the system (for read and write queries)
-        (3) Read/Write ratio
-        (4) Traffic estimates
-                - Write (QPS, Volume of data)
-                - Read  (QPS, Volume of data)
-        (5) Storage estimates
-        (6) Memory estimates
-                - If we are using a cache, what is the kind of data we want to store in cache
-                - How much RAM and how many machines do we need for us to achieve this ?
-                - Amount of data you want to store in disk/ssd
-(3) DESIGN GOALS [5 min]
+- FEATURE EXPECTATIONS [5 min]
+        * Use cases.
+        * Scenarios that we can ignore.
+        * Who will use.
+        * How many will use.
+        * Usage patterns.
+- ESTIMATIONS [5 min]
+        * Throughput (QPS for read and write queries)
+        * Latency expected from the system (for read and write queries)
+        * Read/Write ratio
+        * Traffic estimates
+                * Write (QPS, Volume of data)
+                * Read  (QPS, Volume of data)
+        * Storage estimates
+        * Memory estimates
+                * If we are using a cache, what is the kind of data we want to store in cache
+                * How much RAM and how many machines do we need for us to achieve this ?
+                * Amount of data you want to store in disk/ssd
+- DESIGN GOALS [5 min]
         (1) Latency and Throughput requirements
         (2) Consistency vs Availability  [Weak/strong/eventual => consistency | Failover/replication => availability]
 (4) HIGH LEVEL DESIGN [5-10 min]
