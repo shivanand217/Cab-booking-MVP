@@ -8,6 +8,7 @@ Designing MVP for a cab booking application similar to Uber.
 * Building Microservices.
 * Deploying Services.
 
+Technologies Used - Spring Boot, Hibernate, JPA, PostgresSQL, Redis.
 
 # Requirements:
 
