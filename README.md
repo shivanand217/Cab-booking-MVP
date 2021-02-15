@@ -13,12 +13,12 @@ Technologies Used - Spring Boot, Hibernate, JPA, PostgresSQL, Redis.
 # Discussion Points:
 
 - [x] FEATURE EXPECTATIONS (5 mins)
-- [x]Use cases.
-- [x]Scenarios that we can ignore.
-- [x]Who will use.
-- [x]How many will use.
-- [x]Usage patterns.
-- [x]ESTIMATIONS (5 mins)
+- Use cases.
+- Scenarios that we can ignore.
+- Who will use.
+- How many will use.
+- Usage patterns.
+- ESTIMATIONS (5 mins)
         * Throughput (QPS for read and write queries)
         * Latency expected from the system (for read and write queries)
         * Read/Write ratio
